@@ -6,9 +6,10 @@ This is heavily realted on the comment of [MondayCha](https://gist.github.com/ab
 
 Tested with
 
-| wsl2 Linux Kernel | Distribution |
-| --- | --- |
-| `5.15.90.1-microsoft-standard-WSL2 x86_64` | Ubuntu-22.04 |
+| wsl2 Linux Kernel | Distribution | is_working? |
+| --- | --- | --- |
+| `5.15.90.1-microsoft-standard-WSL2 x86_64` | Ubuntu-22.04 | [x] |
+| `5.15.90.1-microsoft-standard-WSL2 x86_64` | Ubuntu-20.04 | [x] |
 
 ## tl;dr
 
@@ -22,11 +23,13 @@ wsl --install Ubuntu-22.04
 
 ```bash
 sudo apt update
+sudo apt upgrade
 sudo apt install flex bison 
 sudo apt install libdwarf-dev libelf-dev libnuma-dev libunwind-dev \
 libnewt-dev libdwarf++0 libelf++0 libdw-dev libbfb0-dev \
 systemtap-sdt-dev libssl-dev libperl-dev python-dev-is-python3 \
-binutils-dev libiberty-dev libzstd-dev libcap-dev libbabeltrace-dev
+binutils-dev libiberty-dev libzstd-dev libcap-dev libbabeltrace-dev \
+make
 git clone https://github.com/microsoft/WSL2-Linux-Kernel --depth 1
 cd WSL2-Linux-Kernel/tools/perf
 make
@@ -59,7 +62,8 @@ wsl --install Ubuntu-22.04
   sudo apt install libdwarf-dev libelf-dev libnuma-dev libunwind-dev \
   libnewt-dev libdwarf++0 libelf++0 libdw-dev libbfb0-dev \
   systemtap-sdt-dev libssl-dev libperl-dev python-dev-is-python3 \
-  binutils-dev libiberty-dev libzstd-dev libcap-dev libbabeltrace-dev
+  binutils-dev libiberty-dev libzstd-dev libcap-dev libbabeltrace-dev \
+  make
   ```
 
 * clone WSL2-Linux-Kernel sources
