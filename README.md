@@ -25,3 +25,52 @@ cd WSL2-Linux-Kernel/tools/perf
 make
 sudo cp perf /usr/local/bin
 ```
+
+## More
+
+### Windows
+
+```pwsh
+wsl --install Ubuntu-22.04
+```
+
+### WSL2
+
+* Update and Upgrade
+
+  `update` rereads all package sources, while `upgrade` brings the installed packages up to the latest available in the package sources.
+
+  ```bash
+  sudo apt update
+  sudo apt upgrade
+  ```
+
+* Installing packages to build `perf`
+
+  ```bash
+  sudo apt install flex bison 
+  sudo apt install libdwarf-dev libelf-dev libnuma-dev libunwind-dev \
+  libnewt-dev libdwarf++0 libelf++0 libdw-dev libbfb0-dev \
+  systemtap-sdt-dev libssl-dev libperl-dev python-dev-is-python3 \
+  binutils-dev libiberty-dev libzstd-dev libcap-dev libbabeltrace-dev
+  ```
+
+* clone WSL2-Linux-Kernel sources
+  ```bash
+  git clone https://github.com/microsoft/WSL2-Linux-Kernel --depth 1
+  ```
+
+* set current directory to `WSL2-Linux-Kernel/tools/perf`
+  ```bash
+  cd WSL2-Linux-Kernel/tools/perf
+  ```
+
+* build perf from sources
+  ```bash
+  make
+  ```
+  
+* copy sources to `/usr/local/bin`
+  ```bash
+  sudo cp perf /usr/local/bin
+  ```
