@@ -1,7 +1,14 @@
 # perf_WSL2
+
 How to run `perf` on WSL2
 
 This is heavily realted on the comment of [MondayCha](https://gist.github.com/abel0b/b1881e41b9e1c4b16d84e5e083c38a13?permalink_comment_id=4532886#gistcomment-4532886).
+
+Tested with
+
+| wsl2 Linux Kernel | Distribution |
+| --- | --- |
+| `5.15.90.1-microsoft-standard-WSL2 x86_64` | Ubuntu-22.04 |
 
 ## tl;dr
 
