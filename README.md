@@ -2,7 +2,7 @@
 
 How to run `perf` on WSL2
 
-This is heavily realted on the comment of [MondayCha](https://gist.github.com/abel0b/b1881e41b9e1c4b16d84e5e083c38a13?permalink_comment_id=4532886#gistcomment-4532886).
+This is heavily based on the comment of [MondayCha](https://gist.github.com/abel0b/b1881e41b9e1c4b16d84e5e083c38a13?permalink_comment_id=4532886#gistcomment-4532886).
 
 Tested with
 
@@ -16,7 +16,10 @@ Tested with
 ### Windows
 
 ```pwsh
-wsl --install Ubuntu-22.04
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+wsl --update
+wsl --install -d Ubuntu-22.04
 ```
 
 ### WSL2
@@ -40,9 +43,27 @@ sudo cp perf /usr/local/bin
 
 ### Windows
 
-```pwsh
-wsl --install Ubuntu-22.04
-```
+More [Info](https://learn.microsoft.com/de-de/windows/wsl/install-manual)
+
+* activate WSL and virtual machine functions
+  
+  ```pwsh
+  dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+  dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+  ```
+
+* update WSL
+ 
+  ```pwsh
+  wsl --update
+  wsl --install -d Ubuntu-22.04
+  ```
+
+* install linux distribution (`wsl --list --online` shows all available distributions)
+  
+  ```pwsh
+  wsl --install -d Ubuntu-22.04
+  ```
 
 ### WSL2
 
